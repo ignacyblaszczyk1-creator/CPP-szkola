@@ -1,0 +1,34 @@
+/******************************************************************************
+
+                              Online C++ Compiler.
+               Code, Compile, Run and Debug C++ program online.
+Write your code in this editor and press "Run" button to compile and execute it.
+
+*******************************************************************************/
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    const int MAKS = 25;
+    long long f[MAKS + 1];
+
+    f[1] = 123;
+    f[2] = 1010;
+    f[3] = 24;
+
+    for (int i = 4; i <= 24; i++) {
+        f[i] = f[i - 1] - f[i - 2] + f[i - 3];
+    }
+
+    int n;
+    cout << "Podaj n (8, 14, 19 lub 24): ";
+    cin >> n;
+
+    if (n >= 1 && n <= 24)
+        cout << "f(" << n << ") = " << f[n] << endl;
+    else
+        cout << "Zly numer " << endl;
+
+    return 0;
+}
